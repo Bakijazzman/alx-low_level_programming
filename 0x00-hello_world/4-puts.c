@@ -1,10 +1,11 @@
 #include <stdio.h>
 /**
-*main: testing out the puts function
-*returns 0
+*	main- prints out the string of character
+*
+*	return- 0 Always Success
 */
-int main()
+int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
-	return(0);
+	return (0);
 }
