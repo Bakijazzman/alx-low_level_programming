@@ -1,4 +1,4 @@
-#include <stdio>
+#include <stdio.h>
 /**
  * main - printing sizes of different data type
  * Return: 0 Always Success
