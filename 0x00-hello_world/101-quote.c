@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 /**
 *     main- printing into the standard error
 *	and that piece of art is useful -dora korpar, 2015-10-19
