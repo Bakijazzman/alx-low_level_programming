@@ -9,7 +9,7 @@
 
 int add(int a, int b)
 {
-	int result;
+	int answer;
 
 	answer = a + b;
 	return (answer);
