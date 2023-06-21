@@ -16,5 +16,5 @@ int _abs(int number)
 		return (answer);
 	}
 	else
-		return (answer);
+		return (number);
 }
