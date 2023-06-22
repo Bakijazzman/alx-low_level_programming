@@ -9,9 +9,9 @@ void print_most_numbers(void)
 	int b;
 
 	b = 0;
-	while(b < 10)
+	while(b <= 9)
 	{
-		if (b = 2 || b = 4)
+		if (b == 2 || b == 4)
 		{
 			continue;
 		}
