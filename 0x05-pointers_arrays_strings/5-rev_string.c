@@ -8,10 +8,9 @@
  */
 void rev_string(char *s)
 {
-	int total1, i;
+	int total1, total2;
 	char ch;
 
-	/*find string length without null char*/
 	for (total1  = 0; s[total1] != '\0'; total1++)
 		;
 
