@@ -9,11 +9,6 @@ void _puts(char *str)
 
 	while (str[total] != '\0')
 	{
-		total++;
-	}
-	total--;
-	while (total <= 0)
-	{
 		_putchar(str[total]);
 		total++;
 	}
