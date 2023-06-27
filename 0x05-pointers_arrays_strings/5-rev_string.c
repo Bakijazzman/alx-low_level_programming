@@ -14,10 +14,10 @@ void rev_string(char *s)
 	for (total1  = 0; s[total1] != '\0'; total1++)
 		;
 
-	for (total2 = 0; total2 < l / 2; total2++)
+	for (total2 = 0; total2 < total1 / 2; total2++)
 	{
 		ch = s[total2];
-		s[i] = s[total1 - 1 - total2];
+		s[total2] = s[total1 - 1 - total2];
 		s[total1 - 1 - total2] = ch;
 	}
 }
