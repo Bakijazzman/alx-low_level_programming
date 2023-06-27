@@ -12,10 +12,10 @@ void _puts(char *str)
 		total++;
 	}
 	total--;
-	while (total >= 0)
+	while (total <= 0)
 	{
 		_putchar(str[total]);
-		total--;
+		total++;
 	}
 	_putchar('\n');
 }
