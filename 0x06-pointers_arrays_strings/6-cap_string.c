@@ -1,11 +1,11 @@
 #include "main.h"
 /**
  * cap_string - function that capitalizes all words of a string
+ * @ch: the arguement
  * Return: the char data type
  */
-char *cap_string(char *)
+char *cap_string(char *ch)
 {
-	char ch;
 	int i = 0;
 	int cap_next = 1;
 
