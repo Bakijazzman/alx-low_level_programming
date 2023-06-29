@@ -9,7 +9,7 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	unsigned int i, j;
+	int i, j;
 
 	i = 0;
 	j = 0;
