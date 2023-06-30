@@ -1,39 +1,48 @@
 #include "main.h"
+#include <stdio.h>
+
 /**
- * infinite_add - function that adds twoo numbers 
- * @n1: first number
- * @n2: second number
- * @r: the buffer for storage
- * @size_r: is the buffer size
- * Return: 0 success
+ * infinite_add - adds two numbers
+ * @n1: number one.
+ * @n2: number two.
+ * @r: buffer that the function will use to store the result.
+ * @size_r: buffer size:
+ * Return: the pointer to dest.
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1 = strlen(n1);
-	int len2 = strlen(n2);
-	int carry = 0;
-	int sum = 0;
-	int i, j;
-	char *result = (char *) malloc((size_r + 1) * sizeof(char));
+	int i, j, k, l, m, n;
 
-	if (len1 + len2 + 1 > size_r)
+	for (i = 0; n1[i]; i++)
+		;
+	for (j = 0; n2[j]; j++)
+		;
+	if (i > size_r || j > size_r)
+		return (0);
+	m = 0;
+	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
 	{
-		return 0;
+		n = m;
+		if (i >= 0)
+			n += n1[i] - '0';
+		if (j >= 0)
+			n += n2[j] - '0';
+		if (i < 0 && j < 0 && n == 0)
+		{
+			break;
+		}
+		m = n / 10;
+		r[k] = n % 10 + '0';
 	}
-
-	for (i = len1 - 1, j = len2 - 1; i >= 0 || j >= 0 || carry > 0; i--, j--)
+	r[k] = '\0';
+	if (i >= 0 || j >= 0 || m)
+		return (0);
+	for (k -= 1, l = 0; l < k; k--, l++)
 	{
-		int digit1 = i < 0 ? 0 : n1[i] - '0';
-		int digit2 = j < 0 ? 0 : n2[j] - '0';
-		sum = digit1 + digit2 + carry;
-		carry = sum / 10;
-		sum %= 10;
-		result[len1 + len2 - i - j - 2] = sum + '0';
+		m = r[k];
+		r[k] = r[l];
+		r[l] = m;
 	}
-
-	result[len1 + len2 - 1] = '\0';
-	strncpy(r, result, size_r);
-	free(result);
-
 	return (r);
+
 }
