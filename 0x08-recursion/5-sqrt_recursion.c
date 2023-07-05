@@ -23,7 +23,7 @@ int _sqrt_recursion(int n)
 	}
 	else
 	{
-		root = numRoot(n, 1)
+		root = numRoot(n, 1);
 	}
 	return (root);
 }
@@ -42,7 +42,7 @@ int numRoot(int x, int y)
 	}
 	else if (x > (y * y))
 	{
-		return (numRoot(x. y + 1));
+		return (numRoot(x, y + 1));
 	}
 	else
 	{
