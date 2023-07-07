@@ -6,15 +6,15 @@
  * Return: answer
  */
 
-int _abs(int number)
+int _abs(int n)
 {
 	int answer;
 
-	if (number < 0)
+	if (n < 0)
 	{
-		answer = number * (-1);
+		answer = n * (-1);
 		return (answer);
 	}
 	else
-		return (number);
+		return (n);
 }
