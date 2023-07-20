@@ -11,6 +11,10 @@ int sum_them_all(const unsigned int n, ...)
 	va_list _integers;
 	unsigned int i, sum;
 
+	if (n == o)
+	{
+		return (0);
+	}
 	va_start(_integers, n);
 
 		for (i = 0; i < n; i++)
