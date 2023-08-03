@@ -18,6 +18,7 @@ unsigned int binary_to_uint(const char *b)
 		{
 			return (0);
 		}
+
 		n <<= 1;
 		n |= *b - '0';
 		b++;
