@@ -11,7 +11,7 @@ size_t print_listint_safe(const listint_t *head)
 	unsigned int  i = 0, new;
 
 	prov = head;
-	for (;prov != NULL; i++)
+	for (; prov; i++)
 	{
 		printf("[%p] %d\n", (void *)prov, prov->n);
 		prov = prov->next;
