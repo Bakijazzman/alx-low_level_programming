@@ -21,16 +21,13 @@ int create_file(const char *filename, char *text_content)
 	if (desc == n)
 		return (n);
 
-	if (text_content != NULL)
-	{
 	for (i = 0; text_content[i] != '\0'; i++)
 	
-		wordCount = write(desc, text_content, i);
-		if (wordCount == n || (size_t)wordCount != i)
-		{
-			close(desc);
-			return (n);
-		}
+	wordCount = write(desc, text_content, i);
+	if (wordCount == n || (size_t)wordCount != i)
+	{
+		close(desc);
+		return (n);
 	}
 	close(desc);
 	return (1);
