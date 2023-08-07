@@ -11,7 +11,8 @@
 int create_file(const char *filename, char *text_content)
 {
 	ssize_t wordCount;
-	int n = -1, i, desc;
+	int n = -1, desc;
+	size_t i;
 
 	if (!filename)
 		return (n);
@@ -24,7 +25,7 @@ int create_file(const char *filename, char *text_content)
 		for (i = 0; text_content[i] != '\0'; i++)
 		{
 			wordCount = write(desc, text_content, i);
-			if (wordCount == n || wordCount != i)
+			if (wordCount == n || (size_t)wordCount != i)
 			{
 				close(desc);
 				return (n);
