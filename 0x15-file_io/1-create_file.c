@@ -1,34 +1,31 @@
 #include "main.h"
-
 /**
-* create_file - Function that creates a file
-* @filename: Name of the file to create
-* @text_content: A NULL terminated string to write to the file
-*
-* Return: 1 on success, -1 on failure
-**/
-
+ * create_file - creates a file and adds permission to it
+ * @filename: The name of the file to be created
+ * @text_content: content to be placed in the created file
+ * Return: 1 if successfull and -1 on err.
+ */
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t wordCount;
-	int n = -1, desc;
-	size_t i;
+	ssize_t desc = 0, count = 0;
+	int i = 0;
 
-	if (!filename)
-		return (n);
+	if (filename == NULL)
+		return (-1);
 
-	desc = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
-	if (desc == n)
-		return (n);
+	if (!text_content)
+		text_content = "";
 
-	for (i = 0; text_content[i] != '\0'; i++)
-	
-	wordCount = write(desc, text_content, i);
-	if (wordCount == n || (size_t)wordCount != i)
-	{
-		close(desc);
-		return (n);
-	}
+	desc = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 00600);
+	if (desc == -1)
+		return (-1);
+
+	for (; text_content[i]; i++)
+
+	count = write(desc, text_content, i);
+	if (count < 0)
+		return (-1);
+
 	close(desc);
 	return (1);
 }
