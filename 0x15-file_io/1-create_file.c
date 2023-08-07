@@ -20,8 +20,8 @@ int create_file(const char *filename, char *text_content)
 	if (desc == -1)
 		return (-1);
 
-	for (; text_content[i]; i++)
-
+	while (text_content[i])
+		i++;
 	count = write(desc, text_content, i);
 	if (count < 0)
 		return (-1);
