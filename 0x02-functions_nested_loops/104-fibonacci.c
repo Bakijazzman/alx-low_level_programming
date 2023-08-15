@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	int i = 0, j = 93, count;
+	int i = 0, j = 93, count = 0;
 	size_t a = 0, b = 1, sum;
 	size_t a_half1, b_half2, aa_half1, bb_half2;
 	size_t HAlf, Half;
