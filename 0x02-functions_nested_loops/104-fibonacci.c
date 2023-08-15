@@ -1,72 +1,49 @@
 #include <stdio.h>
-
-
 /**
- * numLength - returns the lenth of string
- * @num : operand number
- * Return: number of digits
+ * main - Prints the first 98 Fibonacci numbers, starting with
+ *        1 and 2, separated by a comma followed by a space.
+ *
+ * Return: Always 0.
  */
-
-int numLength(int num)
-{
-	int length = 0;
-
-	if (!num)
-	{
-		return (1);
-	}
-
-	while (num)
-	{
-		num = num / 10;
-		length += 1;
-	}
-	return (length);
-}
-/**
- * main - prints the first 98 fibonaci sequences
- * Return: 0
- */
-
 int main(void)
 {
-	unsigned long f1 = 1, f2 = 2, tmp, mx = 100000000, f1o = 0, f2o = 0, tmpo = 0;
-	short int i = 1, initial0s;
+	int i = 0, j = 93, count;
+	size_t a = 0, b = 1, sum;
+	size_t a_half1, b_half2, aa_half1, bb_half2;
+	size_t HAlf, Half;
 
-	while (i <= 98)
+	while (i < 92)
 	{
-		if (f1o > 0)
-		{
-			printf("%lu", f1o);
-		}
-		else
-		{
-			initial0s = numLength(mx) - 1 - numLength(f1);
-		}
-
-		while (f1o > 0 && initial0s > 0)
-		{
-			printf("%i", 0);
-			initial0s--;
-		}
-		printf("%lu", f1);
-
-		tmp = (f1 + f2) % mx;
-		tmpo = f1o + f2o + (f1 + f2) / mx;
-		f1 = f2;
-		f1o = f2o;
-		f2 = tmp;
-		f2o = tmpo;
-
-		if (i != 98)
-		{
-			printf(", ");
-		}
-		else
-		{
-			printf("\n");
-		}
+		sum = a + b;
+		printf("%lu, ", sum);
+		a = b;
+		b = sum;
 		i++;
 	}
+	a_half1 = a / 10000000000;
+	aa_half1 = b / 10000000000;
+	b_half2 = a % 10000000000;
+	bb_half2 = b % 10000000000;
+
+	for (; j < 99; j++)
+	{
+		HAlf = a_half1 + aa_half1;
+		Half = b_half2 + bb_half2;
+		if (b_half2 + bb_half2 > 9999999999)
+		{
+			HAlf += 1;
+			Half %= 10000000000;
+		}
+
+		printf("%lu%lu", HAlf, Half);
+		if (count != 98)
+			printf(", ");
+
+		a_half1 = aa_half1;
+		b_half2 = bb_half2;
+		aa_half1 = HAlf;
+		bb_half2 = Half;
+	}
+	printf("\n");
 	return (0);
 }
