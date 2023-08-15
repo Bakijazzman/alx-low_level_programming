@@ -7,18 +7,17 @@
  */
 int main(void)
 {
-	int i = 0, j = 93, count = 0;
+	int i = 0, j = 93, count = 93;
 	size_t a = 0, b = 1, sum;
 	size_t a_half1, b_half2, aa_half1, bb_half2;
 	size_t HAlf, Half;
 
-	while (i < 92)
+	for (; i < 92; i++)
 	{
 		sum = a + b;
 		printf("%lu, ", sum);
 		a = b;
 		b = sum;
-		i++;
 	}
 	a_half1 = a / 10000000000;
 	aa_half1 = b / 10000000000;
