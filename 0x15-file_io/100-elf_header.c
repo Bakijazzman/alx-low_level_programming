@@ -97,9 +97,9 @@ void elf_magic(const unsigned char *buffer)
 		exit(98);
 	}
 
-	printf("ELF Header:\n  Magic:   ");
+	_putstr("ELF Header:\n  Magic:   ");
 
-	while(i < 16)
+	while (i < 16)
 	{
 		printf("%02x%c", buffer[i], i < 15 ? ' ' : '\n');
 		i++;
@@ -291,7 +291,7 @@ void elf_entry(const unsigned char *buffer, size_t bit_mode, int big_endian)
  *
  * Return: Always 0
  */
-int main(int argc, const char *argv[])
+int main(int argc, const char **argv)
 {
 	unsigned char buffer[18];
 	size_t bit_mode;
