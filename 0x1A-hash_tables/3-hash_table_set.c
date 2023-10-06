@@ -3,7 +3,7 @@
  * hash_table_set - add an element
  * @ht: existing hash table
  * @key: key to add
- * @key: value of the key
+ * @value: value of the key
  * Return: 1 or 0
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
